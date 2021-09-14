@@ -2,6 +2,7 @@ const express = require("express");
 const moment = require("moment");
 const fs = require("fs");
 const currentFolder = __dirname;
+const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
 
@@ -40,6 +41,6 @@ app.get("/get_all_files", (req, res) => {
 app.get("/", (req, res) => {
   res.send("File Write and Read Opeartions using node js");
 });
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("server is running");
 });
